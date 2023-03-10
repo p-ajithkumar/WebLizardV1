@@ -1,0 +1,62 @@
+<app-header></app-header>
+
+
+       <body>
+         <div class="container">
+             <div class="text">Register</div>
+
+
+
+             <form [formGroup]="registerForm"  action="#">
+               <div class="form-row">
+                   <div class="input-data">
+                      <input  name="uname" formControlName="uname"  type="text" required>
+                      <div class="underline"></div>
+                      <label for="">Create Username</label>
+                      <div *ngIf="registerForm.get('uname')?.errors && registerForm.get('uname')?.touched" class="mb-3 text-danger">invalid username</div>
+
+                   </div>
+                   <div class="input-data">
+                      <input name="mail" formControlName="mail" type="text" required>
+                      <div class="underline"></div>
+                      <label for="">Email Address</label>
+                      <div *ngIf="registerForm.get('mail')?.errors && registerForm.get('mail')?.touched" class="mb-3 text-danger">invalid email</div>
+
+                   </div>
+                </div>
+                <div class="form-row">
+                   <div class="input-data">
+                      <input name="pswd" formControlName="pswd" type="password" required>
+                      <div class="underline"></div>
+                      <label for="">Enter Password</label>
+                      <div *ngIf="registerForm.get('pswd')?.errors && registerForm.get('pswd')?.touched" class="mb-3 text-danger">invalid password</div>
+
+                   </div>
+                   <div class="input-data">
+                      <input name="repswd" formControlName="repswd" type="password" required>
+                      <div class="underline"></div>
+                      <label for="">Repeat-Password</label>
+                      <div *ngIf="registerForm.get('repswd')?.errors && registerForm.get('repswd')?.touched" class="mb-3 text-danger">invalid password</div>
+
+                   </div>
+                </div>
+                <div class="form-row">
+                   <div class="input-data textarea">
+                      <br />
+                      <div class="form-row submit-btn">
+                         <div class="input-data">
+                            <div class="inner"></div>
+                            <input (click)="register()" type="submit" value="submit">
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </form>
+
+
+          </div>
+        </body>
+ 
+     
+
+<app-footer></app-footer>

@@ -1,0 +1,10 @@
+*
+{
+    margin-left:0px;
+    margin-right: 0px;
+    overflow-x:initial;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+  }

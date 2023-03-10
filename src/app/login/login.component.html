@@ -1,0 +1,67 @@
+<app-header></app-header>
+
+<body>
+
+<div class="row">
+    
+  <div style="margin-top: -40px;"  class="col-lg-4">
+    <img src="https://thumbs.gfycat.com/TotalSleepyElephantseal-size_restricted.gif" alt="Nature" class="responsive" width="300px" height="100px">
+
+   </div>
+   
+
+
+   <div style="font-family: 'Righteous', cursive;" class="col-lg-3 mt-5">
+<h1 style=" color: #0F0E0E;">Join the debate. Join the NewsRoom. <span style="color:#6059ad">Join WebLizard </span> </h1>
+<span><img  height="120px" width="126px" src="https://www.pngmart.com/files/1/Spider-Web-PNG-Transparent-Image.png" alt="">
+  <img  height="120px" width="126px" src="https://media3.giphy.com/media/J4VYCbvs6SvIKRLd4K/giphy.gif?cid=790b7611c943ba54c14b6c157598db4a621b498daa410212&rid=giphy.gif&ct=s" alt="">
+</span>
+</div>
+   
+
+
+   <div style="margin-left: 20px;" class="col-lg-4 mt-5">
+    <div class="text-danger mt-1">{{errorMsg}}</div>
+   <div class="login">
+
+
+    
+
+    <form  (ngSubmit)="login()" [formGroup]="loginForm" >
+        <!-- Email input -->
+        <div class="form-outline mb-1">
+          <input name="uname" formControlName="uname" style="max-width: 300px;" type="text" id="form2Example1" class="form-control" />
+          <label class="form-label" for="form2Example1">Username</label>
+          <div *ngIf="loginForm.get('uname')?.errors && loginForm.get('uname')?.touched" class="mb-3 text-danger">Invalid username</div>
+
+        </div>
+      
+        <!-- Password input -->
+        <div  class="form-outline">
+          <input name="pswd" formControlName="pswd" style="max-width: 300px;" type="password" id="form2Example2" class="form-control" />
+          <label class="form-label" for="form2Example2">Password</label>
+          <div *ngIf="loginForm.get('pswd')?.errors && loginForm.get('pswd')?.touched" class="mb-3 text-danger">invalid password</div>
+        </div>
+       
+         <!-- Submit button -->
+         <button type="submit" class="btn btn-primary btn-block mb-1">Sign in</button>
+         <a routerLink="/update" style="text-decoration: none;color: #04343A;" href="#!"> &nbsp; Forgot password?</a>
+        <!-- 2 column grid layout for inline styling -->
+        <div class="row">
+        </div>
+    </form>
+
+
+
+
+
+
+
+
+   </div>
+   </div>
+</div>
+     
+</body>
+
+<app-footer></app-footer>

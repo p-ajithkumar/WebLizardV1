@@ -1,0 +1,62 @@
+<app-headerlogin></app-headerlogin>
+
+
+
+
+<body>
+  
+
+<div *ngIf="bookmarks.length>0"  class="wrap mt-2 ">
+
+  <div style="display:flex;"  class="search">
+     <input type="text" [(ngModel)]="term" class="searchTerm" placeholder= "search for a news... ">
+     <button routerLink="/main" class="ms-3 btn btn-dark">Home</button>
+  </div>
+</div>
+
+
+
+
+<div class="container mt-4">
+
+<div *ngIf="bookmarks.length>0" class="row">
+
+<div *ngFor="let content of bookmarks | filter : term" class="col-md-3 mt-5 mb-5">
+    <div class="card" style="width: 18rem;">
+        <img height="180px" [src]="content.urlToImage" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> {{ (content.title.length>20)? (content.title | slice:0:20)+'...':(content.title) }}</h5>
+          <p class="card-text">{{ (content.description.length>90)? (content.description | slice:0:90)+'...':(content.description) }}</p>
+          <a href="{{content.url}}" class="btn btn-primary">Read More..</a>
+          <button (click)="removebookmark(content)"  class="btn btn-danger ms-5">Remove</button>
+
+
+        </div>
+      </div>
+</div>
+</div>
+
+
+<div *ngIf="bookmarks.length==0" style="display: flex; justify-content: center;" class="mt-5">
+
+
+<div  style=" display: flex; flex-direction: column; border: 5px solid; border-radius: 5px;">
+  <img height="240px" width="300px" src="https://cdn.dribbble.com/users/553759/screenshots/2356023/liz.gif" alt="">
+<button routerLink="/main" style="border: none; background-color: #E5E5E5; color: #102220; font-weight: 800;">Nothing Found. Click To Go Home! </button>
+</div>
+  </div>
+  
+
+
+
+</div>
+
+</body>
+
+<app-footerlogin></app-footerlogin>
+
+
+
+
+
+

@@ -1,0 +1,119 @@
+
+body{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+  background: #1AD0B7;
+  overflow-y: hidden;
+  
+}
+
+.search {
+  width: 90%;
+  position:sticky;
+  display: flex;
+}
+
+.container{
+  margin-top: 70px;
+}
+
+
+.searchTerm {
+
+  border: 3px solid #04343A;
+  border-radius: 7px 7px 7px 7px;
+  outline: none;
+  width: 400px;
+}
+
+
+
+.searchTerm:focus{
+  color: black;
+}
+
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin-left: -25%;
+  
+}
+
+
+
+.card:hover{
+   transform: scale(1.05);
+   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+}
+
+
+.news-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-family: "Roboto", sans-serif;
+    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
+}
+
+.news-container .title {
+    position: absolute;
+    background: #df2020;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    color: white;
+    font-weight: bold;
+    z-index: 200;
+}
+
+.news-container ul {
+    display: flex;
+    background-color: #04343A;
+    border-radius: 7px;
+    list-style: none;
+    margin: 0;
+    animation: scroll 15s infinite linear;
+}
+
+.news-container ul li {
+  background-color: #04343A;
+  border-radius: 7px;
+    white-space: nowrap;
+    padding: 10px 24px;
+    color: #f8f9f8;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+}
+
+.news-container ul li::after {
+    content:"";
+    width: 1px;
+    height: 100%;
+    background: #b8b8b8;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.news-container ul li:last-child::after {
+    display: none;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translate(-1103px);
+
+    }
+}

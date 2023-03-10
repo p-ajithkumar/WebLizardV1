@@ -1,0 +1,79 @@
+<app-headerlogin></app-headerlogin>
+
+
+
+
+<body>
+  
+
+<div  class="wrap mt-2 me-5 ">
+
+  <div style="display:flex;"  class="search">
+     <input type="text" [(ngModel)]="term" class="searchTerm" placeholder= "search for a news... ">
+     <button routerLink="/bookmarks" class="ms-2 btn btn-dark">Bookmarks</button>
+     <button routerLink="/publish" class="btn btn-secondary ms-2" >Publish</button>
+     <button (click)="logout()" class="btn btn-secondary ms-2" >logout</button>
+
+  </div>
+</div>
+
+
+<div class="news-container mt-5">
+  <div class="title ms-3">
+      Top News
+  </div>
+
+  <ul>
+      <li>
+        The elusive giant willow aphid goes into hiding in spring.
+      </li>
+      
+      <li>
+        Warrior Nun: Barry Visits #SaveWarriorNun Sign, Thanks Halo Bearers
+      </li>
+      <li>
+        The elusive giant willow aphid goes into hiding in spring.
+      </li>
+      
+      <li>
+        Warrior Nun: Barry Visits #SaveWarriorNun Sign, Thanks Halo Bearers
+      </li>
+  </ul>
+</div>
+
+
+
+
+<div class="container ms-5">
+
+<div class="row">
+
+<div *ngFor="let content of newsContent | filter : term" class="col-md-3 mt-5 mb-5">
+    <div class="card" style="width: 18rem;">
+        <img height="180px" [src]="content.urlToImage" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> {{ (content.title.length>20)? (content.title | slice:0:20)+'...':(content.title) }}</h5>
+          <p class="card-text">{{ (content.description.length>90)? (content.description | slice:0:90)+'...':(content.description) }}</p>
+          <a href="{{content.url}}" class="btn btn-primary"> More..</a>
+          <button (click)="addBookmark(content)"  class="btn btn-success ms-1">Bookmark</button>
+
+<img  (click)="openWhatsApp(content.url)" height="40px" width="40px" src="https://www.freeiconspng.com/thumbs/logo-whatsapp-png/get-logo-whatsapp-png-pictures-1.png" alt="">
+<img  (click)="openWhatsApp(content.url)" height="35px" width="35px" src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-facebook-social-media-icon-png-image_6315968.png" alt="">
+
+</div>
+      </div>
+</div>
+</div>
+
+
+
+</div>
+
+</body>
+
+<app-footerlogin></app-footerlogin>
+
+
+
+
+

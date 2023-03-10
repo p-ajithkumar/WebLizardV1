@@ -1,0 +1,82 @@
+<app-headerlogin></app-headerlogin>
+<body>
+    <div *ngIf="login" class="container">
+        <div class="text">Publish News</div>
+
+
+
+        <form  [formGroup]="publishForm"  action="#">
+          <div class="form-row">
+              <div class="input-data">
+                 <input  name="author" formControlName="author"  type="text" required>
+                 <div class="underline"></div>
+                 <label for="">Your Name (Publisher)</label>
+
+              </div>
+              <div class="input-data">
+                 <input name="title" formControlName="title" type="text" required>
+                 <div class="underline"></div>
+                 <label for="">Title For Your News</label>
+
+              </div>
+           </div>
+           <div class="form-row">
+              <div class="input-data">
+                 <input name="urlToImage" formControlName="urlToImage" type="text" required>
+                 <div class="underline"></div>
+                 <label for="">Add Photo URL</label>
+
+              </div>
+              <div class="input-data">
+                 <input name="url" formControlName="url" type="text" required>
+                 <div class="underline"></div>
+                 <label for="">Source URL</label>
+
+              </div>
+           </div>
+
+
+           <div class="form-row">
+            <div class="input-data">
+               <input name="description" formControlName="description" type="text" required>
+               <div class="underline"></div>
+               <label for="">Add Description</label>
+
+
+            </div>
+         </div>
+
+
+           <div class="form-row">
+              <div class="input-data textarea">
+                 <br />
+                 <div  style="display: flex; justify-content: center; align-items: center;" class="form-row submit-btn ">
+                    <div class="input-data">
+                       <div class="inner"></div>
+                       <input (click)="publish()" type="submit" value="submit">
+
+
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </form>
+
+
+     </div>
+
+    
+   <div *ngIf="!login" style="display: flex; justify-content: center;" class="mt-5">
+
+
+      <div  style=" display: flex; flex-direction: column; border: 5px solid; border-radius: 5px; height: 270px;">
+        <img height="240px" width="300px" src="https://cdn.dribbble.com/users/553759/screenshots/2356023/liz.gif" alt="">
+      <button routerLink="/login" style="border: none; background-color: #E5E5E5; color: #102220; font-weight: 800;">Login First! Click Here </button>
+      </div>
+        </div>
+
+
+
+
+   </body>
+<app-footerlogin></app-footerlogin>
